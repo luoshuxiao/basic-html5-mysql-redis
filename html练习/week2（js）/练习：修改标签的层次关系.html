@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				position: relative;
+			}
+			
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#div1{
+				background-color: #008000;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+
+			}
+			#div2{ 
+				background-color: black;
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				/*z-index值越大，层次越往上*/
+   
+			}
+			#div3{
+				background-color: greenyellow;
+				position: absolute;
+				top: 80px;
+				left: 250px;
+			}
+			
+			
+			
+			
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+		<div id='div3'></div>
+		
+		<script type="text/javascript">
+			var div1Node = document.getElementById('div1')
+			var div2Node = document.getElementById('div2')
+			var div3Node = document.getElementById('div3')
+			//  保存最上面的节点
+			var a=0
+			function clickAction(){
+				a++
+				this.style.zIndex = a
+
+				
+			}
+			div1Node.onclick = clickAction
+			div2Node.onclick = clickAction
+			div3Node.onclick = clickAction
+		</script>
+		
+		
+	</body>
+</html>

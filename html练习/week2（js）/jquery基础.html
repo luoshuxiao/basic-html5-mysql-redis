@@ -1,0 +1,80 @@
+<!--1.jQuery就是相当于javascript的一个第三方库，主要针对标签操作进行封装（包括节点操作，属性操作，样式操作，事件操作等）
+	让js操作起来更快更方便
+	2.写jQuery代码：
+	第一步：通过script标签导入jQuery文件
+	第二步：$代表jQuery
+	3.节点操作
+	window.onload -- 当网络中的内容全部加载成功后触发的事件（如果有网路图片加载，会等图片加载完成后触发事件）
+	$(函数) -- 函数中的内容等到页面中所有标签加载完成后才执行
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--导入jQuery本地文件-->
+		<script type="text/javascript" src="js/jquery.min.js">
+		    //等待页面中所有的标签添加成功，就会触发
+		    //  完整版
+			$(document).ready(function(){
+			
+		    })
+			// 简写版本
+			$(function(){
+				//2.获取节点操作（选择器）
+				//$(选择器) ---  选择器和js一样
+				//a.通过标签名获取节点 --标签选择器
+				//$('标签选择器') --- 选择网页中所有的指定标签，返回是jQuery对象不是数组 
+				//注意：返回值不是数组，无论选择到几个标签，返回类型都是一样的，可以对整体进行操作
+			$('p+a')  // 紧跟着p标签后面的a标签
+			$('#div>a') // 获取id是div标签下的标签名为a的子标签
+			$('#div')  // 获取所有id是div的标签
+			$('a')   //  获取所有a标签
+			$('.div') // 获取所有class是div的标签
+			$('a,p') //  获取a标签和p标签
+			$('#p1~*') // 获取和id是p1平级的所有标签
+			$('div:first') //获取网页中的第一个div标签
+			$('p:last')  // 获取网页中最后一个p标签
+			$('div *:first-child') // 获取网页中所有div标签下第一个子标签	
+			
+			//  3. 创建标签：$('html语法') --- $('<div>内容</div>')
+            var imgNode = $('<div>我是div</div>')
+			//   4.添加标签：父标签.append(子标签) --在父标签最后添加
+			//            父标签.prepend（子标签) --在父标签最前添加
+			$('body').append(imgNode)
+			$('body').prepend(imgNode)
+			$('h1').before($('<h1></h1>'))
+			$('h1').after($('<p></p>'))
+			
+			//  5.清空标签---标签.empty(清空指定标签内的文本和子标签)
+			$('#div').empty()
+			// 6.删除标签 -- 标签.remove()
+			$('#div').remove()
+            $('#id1').append($('<p>我是我是</p>'))
+			
+			
+			
+			
+			})
+
+			
+		</script>
+		
+		
+		
+		
+	
+		<!--企业开发的时候，通过cdn加速，去服务器直接导入jQuery文件-->
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<div id='id1'>
+			我是谁
+		</div>
+		<div></div>
+	</body>
+</html>

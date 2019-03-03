@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id='time'>0</p>
+		<button onclick="clearBoom()">彩蛋</button>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	var timeNode = document.getElementById('time')
+	var num=0
+	//1.setInterval(函数，时间)  -- 每隔一段时间调用一次函数（时间单位是毫秒）
+	var interval1 = window.setInterval(function(){
+		num++
+		timeNode.innerHTML=num	
+		// 3.clearTnterval -- 到指定时间后停止计时
+		if(num == 30){
+			window.clearInterval(interval1)
+		}
+	},1000)
+	
+	// 2.setTimeout(函数，时间)  --  隔指定时间的调用一次函数（只会调用一次）
+	var massage = 'time is out!'
+	var boom1=window.setTimeout(function(){
+		console.log(massage)
+	},1000)
+	function clearBoom(){
+		window.clearTimeout(boom1)
+	}
+	
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				border: 0;
+				margin: 0;
+				position: relative;
+			}
+			#div1{
+				position: absolute;
+				left: 400px;
+				top: 200px;
+				border: 1px solid black;
+				width: 480px;
+				height: 280px;
+				overflow: hidden;
+			}
+			#div2{
+				position: absolute;
+				top: 500px;
+				left: 550px;
+				margin: 20px;
+				width: 120px;
+				height: 40px;
+			}
+			button{
+				position: absolute;
+				width: 60px;
+				height: 40px;
+				border-radius: 30px;
+				background-color: #00FFFF;
+				outline: 0;
+			}
+			#but2,#but3{
+				margin-left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>
+		</div>
+		<div id='div2'>
+			<button id='but1'>添加</button>
+			<button id='but2'>暂停</button>
+			<button id='but3'>闪烁</button>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				function randomColor(){
+				var num1=parseInt(Math.random()*255)
+				var num2=parseInt(Math.random()*255)
+				var num3=parseInt(Math.random()*255)
+				return 'rgb('+num1+','+num2+','+num3+')'
+				}
+				var div1Node = document.getElementById('div1')
+				var but1Node = document.getElementById('but1')
+				var but2Node = document.getElementById('but2')
+				var but3Node = document.getElementById('but3')
+				but1Node.onclick = function(){
+					var divNode = document.createElement('div')
+					divNode.style.backgroundColor = randomColor()
+					divNode.style.width = '80px'
+					divNode.style.height = '40px'
+					divNode.style.float = 'left'
+					div1Node.insertBefore(divNode,div1Node.firstChild)
+				}
+				var allChildNode = div1Node.children
+				but3Node.onclick = function(){
+				    // 点击闪烁按钮时，把暂停按钮冒上表层，显示出来
+					but3Node.style.zIndex=0
+					but2Node.style.zIndex=1
+				// 每隔一段时间遍历父标签所有的子标签，改变颜色
+				var changeN=window.setInterval(function(){
+					        //遍历父标签，拿到所有之前添加进去的子标签
+							for(var x=0;x<allChildNode.length;x++){
+							allChildNode[x].style.backgroundColor = randomColor()
+							}
+							//  如果闪烁标签在表层，那么停止setInterval
+							if(but3Node.style.zIndex>but2Node.style.zIndex){
+								window.clearInterval(changeN)
+							}
+						},50)
+				}
+				//点击暂停时，将闪烁标签冒上表层，显示出来
+				but2Node.onclick = function(){
+					but3Node.style.zIndex=1
+					but2Node.style.zIndex=0
+				}
+			}
+		</script>
+	</body>
+</html>

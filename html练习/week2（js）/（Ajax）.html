@@ -1,0 +1,57 @@
+<!--Ajax(jQuery封装):  Asynchronous  Javascript  And XML （js+xml）
+             一般用来做网络数据请求，和python中的requestes库一样
+            语法：
+            1.$.get(url,data,回调函数，返回数据类型)
+             ---url:请求地址（字符串）
+             ---data:参数列表（对象）
+             ---回调函数：请求成功后自动调用的函数（函数名或者匿名函数）
+             ---返回数据类型：typedata请求到的数据的格式
+	        2.$.ajax({url,data,type(get或者post),success:function(){}})
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script	type="text/javascript">
+			$(function(){
+			var url2 = 'http://api.tianapi.com/txapi/dream/'
+			var OBJ = [{
+					key:'772a81a51ae5c780251b1f98ea431b84',
+					word:'人'
+			},{
+					key:'772a81a51ae5c780251b1f98ea431b84',
+					word:'蛇'
+			}
+			]
+			var I=0
+			$.ajax({
+				url:url2,
+				data:OBJ[I],
+				type:'GET',
+				success:function(re){					
+				console.log(re)
+				
+				}
+			})
+			
+			
+			
+			
+			
+//			var url1 = 'http://api.tianapi.com/meinv/'
+//			$.get(url1,{'key':'772a81a51ae5c780251b1f98ea431b84','num':'10'},function(re){
+//				var pArray = re.newslist
+//				for(var s in pArray){		
+//					var pu = pArray[s]
+//					var pp=$('<img src="" style=""/>').attr('src',pu.picUrl)
+//					$('body').append(pp)
+//				}
+//			})
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id='p1',class='cp1',style="color: darkgoldenrod;">我是段落</p>
+		<div id="div1" style="height: 100px;background-color: green;">
+			<div id="div11" style="height: 50px;width: 80px;background-color: burlywood;">
+				
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	var pNode = document.getElementById(p1)
+	//获取标签内容
+	var pcontent = pNode.innerHTML
+	
+	
+	
+	//1.创建节点
+	//  document.createElement(标签名) --  创建指定标签节点
+	//  节点可以通过document去网页中获取到，也可以自己创建
+	//   标签对象中有相应的标签相关的属性，可以通过标签节点获取或者修改这些属性值
+	/*
+	    例如：a标签节点有：href属性，id属性，className属性，style属性等
+	    img标签节点有：src属性，id属性，style属性，alt属性，title属性等
+	    innerHTML： 双标签的标签内容（包含其他标签）
+	    innerText：双标签的标签内容（侧重只有文字）
+	    
+	 * */
+	// 创建超链接和图片节点
+	var aNode = document.createElement('a')
+	var imgNode = document.createElement('img')
+	//  修改img节点的图片src属性
+	imgNode.src='img/img/a1.jpg'
+	//添加节点
+	//a.在制定的标签中的最后添加一个节点
+	//父节点.appendChild
+	var divNode = document.getElementById('div1')
+	div1Node.appendChild(imgNode)
+	function addDiv(){
+		var divNode = document.createElement('div')
+		divNode.innerHTML='我是box1'
+		div1Node.append(divNode)
+	}
+	//父节点.insertBefore（新节点，指定节点） -- 在父节点中的指定节点插入新节点
+	
+	div1Node.insertBefore(imgNode,divNode.firstChild)
+	
+	//3.删除子节点
+	//父节点.removeChild（子节点） -- 删除父节点中指定的子节点
+	divNode.removeChild(imgNode)
+	divNode.innerHTML = null     //  清空父标签所有子标签   
+	//4.直接删除节点
+	//  节点.remove()
+	
+	//5.隐藏
+	// 设置style属性中的display值为none --  节点.style.display = 'none'
+	//6.Math.random() -- 产生随机数0到1之间的小数
+	//    parseInt()  -- 转换成整数
+    //    parseFloat() -- 转换成小数
+    //7.拷贝节点 -- 节点.cloneNode() --  浅拷贝，只会拷贝当前节点，不会拷贝它的子节点
+    //           节点.cloneNode(true)  --  深拷贝，连它的子节点一起拷贝
+    //8.替换节点--父节点.raplaceChild -- 替换父节点的子节点
+    
+    
+</script>

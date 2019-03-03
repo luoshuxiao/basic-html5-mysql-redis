@@ -1,0 +1,278 @@
+
+/*=====通用=====*/
+*{
+	/*取消所有自带间距*/
+	margin: 0;
+	padding: 0;
+	/*让当前网页所有标签子标签相对于自己定位*/
+	position: relative;
+}
+a{
+	/*取消所有a标签下划线*/
+	text-decoration: none;
+}
+/*1.=====网页顶部=====*/
+#top{
+	height: 120px;
+	/*background-color: skyblue;*/
+}
+/*设置网页顶部高度*/
+#header #top{
+	height: 80px;
+}
+/*京东图片作为超链接的位置布局（垂直位置居中）*/
+#header #top #div1{
+	position: absolute;
+	left: 186px;
+	
+	/*垂直居中*/
+	top: 50%;
+	margin: -30px;
+}
+/*登录调查页面位置布局、文字效果、图标位置作为背景图片布局*/
+#header #top #a1{
+	position: absolute;
+	right: 190px;
+	bottom: 10px;
+	/*文字效果*/
+	font-size: 12px;
+	color: rgb(153,153,153);
+	/*背景图
+	 background:图片地址 时候平铺  x坐标 y坐标 背景颜色
+	 */
+	padding-left: 23px;
+	background: url(../img/img/q-icon.png) no-repeat 0px center rgba(0,0,0,0);
+}
+/*登录调查页面在鼠标选中是时，添加下划线、字体变成红色*/
+#header #top #a1:hover{
+	color: red;
+	text-decoration: underline;
+}
+/*《网络安全法》标签布局：水平居中、高度、垂直居中、背景颜色*/
+#header #bottom{
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: rgb(255,246,236);
+}
+/*《网络安全法》文字大小、颜色渲染，设置margin与左边图标拉开距离*/
+#header #bottom font{
+	margin-left: 20px;
+	font-size: 15px;
+	color: rgb(153,153,153);
+}
+/*京东隐私政策超链接颜色渲染*/
+#header #bottom font a{
+	color: rgb(38,38,38);
+}
+/*京东隐私政策鼠标选中时加下划线状态设置*/
+#header #bottom font a:hover{
+	text-decoration: underline;
+}
+/*网络安全法前面的小图标垂直居中布局*/
+#header #bottom img{
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+/*2.=====网页中间=====*/
+/*中间整体板块高度、背景设置*/
+#content{
+	height: 500px;
+	/*背景图
+	 background:将左边的图片作为背景布局，x方向布局15%（效果是随着网页页面x方向缩小而缩小，y方向center居中，其他地方darkred深红颜色填充）
+	 */
+	background: url(../img/img/bg1.png) no-repeat 15% center darkred;
+}
+/*登录框宽高、背景颜色、距离父标签右、上距离布局设置*/
+#content #login_div{
+	width: 350px;
+	height: 400px;
+	background-color: white;
+	position: absolute;
+	right: 188px;
+	top: 15px;
+}
+/*登录框最上面内容水平居中、高度设置、背景颜色设置*/
+#content #login_div #div2{
+	height: 40px;
+	background-color: rgb(255,246,236);
+	line-height: 40px;
+}
+/*登录框最上面内容文字大小、水平居中设置*/
+#content #login_div #div2 p{
+	font-size: 12px;
+	text-align: center;
+}
+/*登录框最上面小图标垂直居中*/
+#content #login_div #div2 p img{
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+}
+/*扫描和账户登录设置高度、文字颜色、文字加粗*/
+#content #login_div #div3{
+	height: 55px;
+	color: rgb(220,220,220,0.6);
+	font-weight: 100;
+/*	font-size: 18px;*/
+}
+
+/*扫描和账户登录两个按钮设置宽、高、颜色、文字大小、背景颜色、去掉border边框、文字加粗*/
+#content #login_div #div3 button{
+	width: 170px;
+	height: 100%;
+	color: rgb(83,83,83);
+	font-size: 19px;
+	background-color: white;
+	border: 0;
+	font-weight: 580;
+}
+/*扫描和登录按钮，成为焦点（鼠标点中）后对应的状态设置，去掉outline边框、鼠标点击后颜色变为红色*/
+#content #login_div #div3 button:focus{
+	outline: none;
+	color: rgb(215,36,50)
+}
+/*用户名和密码输入框高度和border设置*/
+#content #login_div #div4{
+	height: 255px;
+	border-top: 1px solid rgba(220,220,220,0.6);
+	border-bottom: 1px solid rgba(220,220,220,0.6);
+/*	background-color: gray;*/
+}
+/*用户名和密码输入框宽、高、border边框以及和父标签距离布局设置*/
+#content #login_div #div4 #username,#content #login_div #div4 #password{
+	height: 40px;
+    margin: 20px;
+	/*background-color: red;*/
+	border: 1px solid rgba(220,220,220,1);
+}
+/*设置密码输入框离父标签的距离*/
+#content #login_div #div4 #password{
+	top: 20px;
+}
+/*用户名和密码输入框前面的图标位置布局、边框设置*/
+#content #login_div #div4 img{
+	height: 100%;
+	float: left;
+	border-right: 1px solid rgba(220,220,220,1);
+}
+/*用户名和密码输入框去border表框、宽高设置、变为浮动状态、加padding与图标拉开距离、去掉outline边框*/
+#content #login_div #div4 input{
+	border: 0;
+	width: 260px;
+	height: 100%;
+	float: left;
+	padding-left: 7px ;
+	outline: none;
+}
+/*忘记密码超链接位置、文字大小颜色布局*/
+#content #login_div #div4 a{
+	position: absolute;
+	right: 20px;
+	top: 150px;
+	font-size: 13px;
+	color: rgb(85,85,85);
+}
+/*忘记密码超链接鼠标选中状态加下划线、颜色变红*/
+#content #login_div #div4 a:hover{
+	text-decoration: underline;
+	color: red;
+}
+/*登录按钮去border边框、位置设置、字体大小颜色、背景颜色设置*/
+#content #login_div #div4 button{
+	position: absolute;
+	border: 0;
+	left: 20px;
+	top: 180px;
+	width: 313px;
+	height: 40px;
+	font-size: 20px;
+	color: white;
+	background-color: darkred;
+}
+/*登录按钮去掉outline边框*/
+#content #login_div #div4 button:focus{
+	outline: 0;
+}
+/*登录按钮设置边框、圆角*/
+#content #login_div #div4 button:active{
+	border: 2px solid deeppink;
+	/*设置圆角*/
+	border-radius: 3px;
+}
+/*QQ、微信、立即注册板块高度设置、垂直居中、文字内容颜色、大小设置*/
+#content #login_div #div5{
+	height: 50px;
+	line-height: 50px;
+	color: rgb(153,153,153);
+	font-size: 12px;
+}
+/*QQ文字大小、左右margin设置、图标作为背景进行位置布局、文字加padding与图标拉开距离、*/
+#content #login_div #div5 #a1{
+	font-size: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background: url(../img/img/qq.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 25px;
+}
+/*QQ设置鼠标选中时状态为：加下划线、颜色变红*/
+#content #login_div #div5 #a1:hover{
+	text-decoration: underline;
+	color: red;
+}
+/*微信*/
+#content #login_div #div5 #a2{
+	margin-left: 20px;
+	background: url(../img/img/weixin.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 25px;
+	font-size: 10px;
+}
+/*微信*/
+#content #login_div #div5 #a2:hover{
+	text-decoration: underline;
+	color: red;
+}
+/*立即注册*/
+#content #login_div #div5 #a3{
+	position: absolute;
+	right: 10px;
+	background: url(../img/img/right.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 25px;
+}
+/*立即注册*/
+#content #login_div #div5 #a3:hover{
+	text-decoration: underline;
+	color: red;
+}
+/*=====3.网页底部 =====*/
+/*父标签设置水平居中*/
+#footer{
+	text-align: center;
+}
+/*将底部一排的超链接作为一个整体居中、字体大小颜色和margin*/
+#footer div{
+	text-align: center;
+	font-size: 10px;
+	color: rgb(153,153,153);
+	margin-top: 20px;
+}
+/*设置超链接左右间距、字体大小、颜色*/
+#footer div a{
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 14px;
+	color: rgb(153,153,153);
+}
+/*设置最后一行的字体大小、颜色、margin高度*/
+#footer p{
+	font-size: 10px;
+	margin-top: 16px;
+	color: rgb(153,153,153);
+}
+/*设置鼠标放在该位置时超链接有下划线和颜色变红*/
+#footer div a:hover{
+	text-decoration: underline;
+	color: red;
+}

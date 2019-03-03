@@ -1,0 +1,28 @@
+
+<script type="text/javascript">
+	var pNode = document.getElementsByTagName('p')
+	var num=5 
+	var timeN = window.setInterval(function(){
+		num--
+		pNode.innerText=num
+	},1000)
+	if(num==0){
+		window.open('http://www.baidu.com')
+	}
+	function jump(){
+		window.open('http://www.baidu.com')
+	}
+</script>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>5</p>
+		<button onclick="jump()">跳转</button>
+	</body>
+</html>

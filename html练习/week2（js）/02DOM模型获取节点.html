@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM模型</title>
+	</head>
+	<body>
+		<p id='p1'>老子是标签一</p>
+		<a href="http://www.baidu.com">百度</a>
+		<a href="">刷新</a>
+		<a class='c1' href="">c1</a>
+		<a class='c1' href="">c2</a>
+		<div id='box1'>
+			<div id='box11'>div11</div>
+			<div id='box11'>div12</div>
+			<div id='box11'>div13</div>
+		</div>
+	</body>
+</html>
+
+
+<!--
+	1.文档对象模型：DOM（document object model）
+	      模型是一种倒着的树结构，里面是各种节点组成
+	2.document对象： js中写好的一个对象，代码是网页内容结构
+	  通过document对象可以拿到网页中所有对应的节点
+	3.获取节点（在js中获取html标签）
+	  
+	  
+	  
+-->
+<script type="text/javascript">
+	//=====节点操作====
+	//1.直接获取节点
+	// a.通过标签的id值来获取指定的标签
+	/* document.getElementById(id值) -- 返回节点对象
+	 * 如果html中同样的id对应的标签有多个，只会取一个（一般情况下id在html中要有唯一性）
+	 */
+	var pNode = document.getElementById('p1')
+	console.log(pNode)
+	/* b.通过标签名来获取指定的标签
+	 * document.getElementsByTagName(标签名 ) -- 返回数组，数组中是节点
+	 */
+	var aNode=document.getElementsByTagName('a')
+	for(x in aNode){
+		if(typeof(aNode[x])=='object'){
+			console.log(aNode)
+		}
+	}
+	/*c.通过类名来获取指定标签
+	 document.getElenmentsByClassName(类名) -- 返回数组，数组中是节点
+	 * */
+	var bNode = document.getElementsByClassName('c1')
+	console.log(bNode)
+	//2.间接获取节点
+	/*
+	 a.获取父节点
+	 * */
+	var box11Node = document.getElementById('box11')
+	var box1Node  = box11Node.parentElement
+	var box1Node2 = box11Node.parentNode
+	console.log(box1Node,box1Node2)
+	/*
+	 b.获取子节点
+	 * */
+	// 获取所有子节点： 父节点.children--返回数组对象
+	var allchild=box1Node.children
+	console.log(allchild)
+	// 获取父节点下所有内容（节点和文本）： 父节点.childNodes -- 返回数组 对象
+	var allchild1=box1Node.childNodes
+	console.log(allchild1)
+	//获取第一个子节点: 父节点.firstEkementChild -- 返回对象
+	var firstchild1 = box1Node.firstElementChild
+	console.log(firstchild1)
+	
+</script>

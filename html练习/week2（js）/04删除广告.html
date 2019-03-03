@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				position: relative;
+				border: 0;
+				margin: 0;
+			}
+			#ab{
+				height:100px;
+				background-color: burlywood;
+			}
+			#ab img{
+				width: 100%;
+				height: 100%;
+			}
+			#ab #close{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 30px;
+				height: 30px;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+				background-color: chocolate;
+			}
+			#content{
+				height: 500px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='ab'>
+			<img src="img/img/picture-1.jpg"/>
+			<div id="close" onclick="close1()">
+				X
+			</div>
+			
+		</div>
+		<div id='content'></div>
+
+		<script type="text/javascript">
+			function close1(){
+				var abNode = document.getElementById('ab')
+//				abNode.remove()
+                abNode.style.display='none'
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!--伪类选择器
+	用来选中标签的不同状态(为了给不同状态标签)
+	1.基本格式：
+	普通选择器：伪类选择器
+	2.伪类选择器
+	1）link -- 标签的初始状态：一般作用于a标签，表示a标签中的链接没有成功访问过的状态
+	      标签：link{}  -- 标签是通过各种选择器来选中的标签
+	2) visited -- 超链接被访问后的状态，一般作用于a标签
+	3）hover --  设置鼠标放在超链接位置上的状态
+	4）active -- 激活状态，鼠标按下还没有弹起的状态
+	3.爱恨原则：LoveHate--当同一个标签需要同时给多个状态添加样式，要遵守爱恨原则link-visited-hover
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类选择器</title>
+		<style type="text/css">
+			a{
+				text-decoration: none;
+			}
+			a:link{
+				color: red;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+			a:active{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="https://www.dytt8.net/">超链接</a>
+	</body>
+</html>

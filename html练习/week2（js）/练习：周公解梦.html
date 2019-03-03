@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style type="text/css">
+			#top{
+				position: absolute;				
+				height: 50%;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid black;
+			}			
+			input{
+				margin-top: 370px;
+				border: 0;
+				border-bottom: 1px solid black;
+                font-size: 20px;
+				outline: 0;
+				left: 10px;
+				text-align: center;
+			}
+			button{
+				background-color: #D2691E;
+				width: 80px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+			}
+			#bottom{
+				position: absolute;
+				top: 450px;
+				width: 100%;
+				height: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var pictureArry
+				var url1 = 'http://api.tianapi.com/meinv/' 
+			    $.get(url1,{'key':'772a81a51ae5c780251b1f98ea431b84','num':'10'},function(re){
+				    pictureArry = re.newslist
+				})
+				$('button').on('click',function(){
+
+					var value1 = $('input').val()
+					if(value1 == '蛇'||value1 == '人'){
+						for(var s in pictureArry){
+							var my = pictureArry[s]
+							var imgNN=$('<img src=""/ style="width: 100%;">').attr('src',my.picUrl)
+							$('#bottom').append(imgNN)
+						}
+						$('#bottom').prepend($('<font style="color: red;font-size: 40px;padding: 480px;">周公说你今世的夫人就是他了</font>'))
+					}else{
+						$('#bottom').prepend($('<font style="color: red;font-size: 40px;padding: 540px;">周公说你小子输入错误！</font>'))
+					}
+					$('input').val('')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id='top'>
+			<input type="" name="" id="" value="" />
+			<button>查询</button>
+		</div>
+		<div id='bottom'></div>
+	</body>
+</html>

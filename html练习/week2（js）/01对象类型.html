@@ -1,0 +1,97 @@
+<script type="text/javascript">
+	//1.对象：(js中没有类，只有对象，也是通过构造方法构造，和python中对象一样，也有对象属性和对象方法)
+	/*
+	 2.创建对象
+	 * a.创建对象字面量  -- {属性名1：属性值1，属性名2：属性值2...}
+	 * 当属性值是普通纸我们叫这个属性为对象属性，当属性值是函数，我们叫对象方法
+	 * 
+	 * */
+	p1 = {
+		name:'龙哥',
+	    age:'18',
+	    eat:function(){
+		    console.log('吃饭')
+	       }
+	}
+	
+	/*b.通过构造方法创建对象
+	 * 声明构造方法（类似python声明类）-- 声明一个函数，使用 函数名类作为类名，在函数中通过this关键字来添加对象属性和对象方法
+	 * 构造方法的函数名首字母大写，this类似python中的self
+	 *   对象 = new Person()
+	 * 
+	 */
+	function Person(name ='小明',age = 18,sex = '男'){
+		// 添加对象属性
+		this.name = name
+		this.age = age
+		this.sex = sex
+		// 添加对象方法
+		this.eat = function(food){
+			console.log(this.name+'在吃'+food)
+		}
+		return this
+	}
+	
+	//  创建Person对象
+	p2 = new Person()
+	p3 = new Person()
+	//  不加new的话，只是在调用函数,获取返回值
+	p4 = Person()
+	//函数中的this关键字
+	/*
+	 当调用函数的时候前面加new就是在创建对象，函数中的this就是当前对象
+	 直接调用函数的时候，函数中的this是一个特殊的对象（window对象）
+	 3. 使用对象属性
+	 * a.对象.[属性名]
+	 * b.对象[属性名]
+	 * 
+	 * 
+	 * */
+	
+	p5 = new Person('龙哥',20,'男')
+	console.log(p5.name)
+	console.log(p5['name'])
+	p5.eat('饺子')
+	
+	/*
+	 4.修改对象属性的值
+	 * */
+	p5.name = '小小'
+	p5['name'] = '大名'
+	// 添加属性（和python一样，当不存在时，添加对象属性，只针对当前对象，不会同时给其他对象添加属性）
+	p5.num = '2323223455'
+	
+	// 通过   构造方法.prototype.属性  = 值  ---  给指定构造方法创建的所有的对象都添加指定的属性
+	
+	//练习：  用一个数组保存多个学生对象，，要求学生对象中有姓名，年龄和成绩。按成绩进行排序
+	
+	function Student(name,age,score){
+		this.name =name;
+		this.age = age;
+		this.score = score;
+		return this;
+	}
+	stu1 =new Student('龙哥',12,99)
+	stu2 =new Student('longge',23,78)
+	stu3 =new Student('lll',23,88)
+	student = [stu1,stu2,stu3]
+	new_stu=student.sort(function(a,b){
+		return a.score-b.score
+	})
+	console.log(new_stu)
+	
+	
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

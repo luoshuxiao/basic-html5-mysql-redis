@@ -1,0 +1,40 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM操作</title>
+	</head>
+	<body>
+		<button onclick="WindowAction()">点我哦</button>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.BOM：browser object model (浏览器对象模型)
+	//js中提供了一个全局的window对象，用来表示当前浏览器
+	//js中声明的全局变量，其实都是 绑定在window对象中的属性，（使用window属性和方法时，可省略window）
+	//2.window基本操作：
+	//a.打开新窗口：window.open()
+	//window.open('http://www.baidu.com')
+	//b.关闭窗口：
+	//window.close()
+	
+	function windowAction(){
+		myWindow= window.open('','',width=200,height=300)
+		mywindow.moveTo(400,400)
+		//d.调整窗口大小 --myWindow.resizeTo(500,500)
+		myWindow.resizeTo(500,500)
+		//e.刷新 -- window.reload(true)
+		window.reload(true)
+	}
+	
+	//f.获取浏览器宽高
+	console.log(window.innerWidth,window.innerHeight)  // 浏览器显示内容部分的宽度和高度
+	console.log(window.outerWidth,window.outerHeight)  //  整个浏览器的宽高
+	// 3.弹框  ---  window.alert(提示信息)
+	window.alert('弹框')
+	window.confirm('是否删除')   // 弹出框有取消和确认按钮，点确认返回值为true，点取消返回值是false
+	
+</script>

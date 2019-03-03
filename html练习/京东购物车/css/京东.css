@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+/*======================顶部======================*/
+#top{
+	height: 35px;
+	background-color: #808080;
+	line-height: 35px;
+
+}
+/*===顶部基本设置===*/
+#top .left_nav{
+	position: absolute;
+	left: 150px;
+	/*去掉标签前面的点*/
+	list-style: none;
+}
+#top .right_nav{
+	position: absolute;
+	right: 150px;
+	list-style: none;
+}
+#top li{
+	float: left;
+	/*同时设置上下、左右margin为0和20*/
+	margin: 0 12px;
+	font-size: 14px;
+	color: #a0a0a0;
+	
+	font-weight: 300;
+}
+.left_nav img{
+	top: 50%;
+	vertical-align: middle;
+	height: 16px
+}
+#top a,font{
+	/*垂直方向居中*/
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 14px;
+	color: #a0a0a0;
+}
+
+/*=====导航条效果=====*/
+#top .seleted_li{
+    height: 35px;
+    width: 80px;
+	padding-left: 12px;
+	margin: 0;
+}
+#top .seleted_li .addr_menu{
+	position: absolute;
+    height: 35px;
+    vertical-align: middle;
+}
+#top .seleted_li .addr{
+	position: absolute;
+	border-bottom: 1px solid #D3D3D3;
+	border-left: 1px solid #D3D3D3;
+	border-right: 1px solid #D3D3D3;
+	width: 350px;
+	height: 285px;
+	top: 35px;
+/*	background-color: blanchedalmond;*/
+	display: none;
+}
+#top .seleted_li:hover .addr{
+	display: block;
+    
+}
+#top .seleted_li:hover .addr_menu{
+	background-color: white;
+	border-left: 1px solid #cccc;
+	border-right: 1px solid #cccc;
+}
+/*==城市标签的样式==*/
+.city{
+	float:left;
+	width:50px;
+	margin:0px 10px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 30px;
+}
+#top .city:hover{
+	color: red;
+	background-color: lightgray;
+}
+
+
+/*鼠标停在a标签上*/
+#top a:hover{
+	color: red;
+}
+#top span{
+	float: left;
+	font-weight: 300;
+	color: #a0a0a0;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*==========================下面=============================*/
+#buttom{
+	height: 700px;
+/*	background-color: cadetblue;*/
+}

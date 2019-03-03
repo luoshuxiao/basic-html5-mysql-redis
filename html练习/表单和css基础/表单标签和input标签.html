@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.表单标签（form）
+			表单标签作用 ：收集用户信息，实质是将表单标签作为容器用来收集表单标签中的其他标签信息
+			                       本身没有任何实质的效果
+			    action属性：设置提交地址
+			    method属性：提交方式（post和get）
+			    点击提交按钮时，将表单中所有相关标签以name=value的形式按照method属性提供的提交方式。
+			    提交给action属性对应的接口
+			    
+			    form标签提交了两大功能：统一提交和重置
+		-->
+		<!--2.input标签
+			既可以放在form标签中，也可以不放在form标签中单独使用
+			type属性：值不一样，对应功能就不一样
+			
+		-->
+		<form action="" method="get">
+			<!--a.type=text : 文本输入框
+				name属性:专门用来区分不同的信息，相当于字典的key
+				value属性：标签内容，指向输入框中的内容，设置其实是设置文本输入框的默认值
+				placeholder属性：输入框中没有输入时显示的提示信息
+				maxlength属性：输入框能输入的最大的位数
+			-->
+			<p>姓名：<input type="text" name="姓名" value="龙哥" placeholder="姓名..."/></p>
+			<p>邮箱：<input type="text" name="邮箱" placeholder="邮箱..." maxlength="8"/></p>
+			<!--b.type=password ：密码输入框
+			-->
+			<p>密码：<input type="password" name="" id="" value="" maxlength="6" placeholder="密码..."/></p>
+			<!--c.radio ：单选按钮
+				name属性：要求同一组的数据的name属性值需一样 ，才能单选其中一个
+				value属性：用于数据的提交，区分选中的值
+				checked属性：让单选按钮处于选中状态
+			-->
+			<p>男<input type="radio" name="sex" id="" value="男" checked="checked"/>女<input type="radio" name="sex" id="" value="女"/></p>
+			<input type="radio" name="marry" id="" value="已婚" /><font>已婚</font>
+			<input type="radio" name="marry" id="" value="未婚" checked="checked"/><font>未婚</font>
+			<br />
+			
+			<!--d.checkbox:复选按钮
+				
+			-->
+			<input type="checkbox" name="hobby" id="" value="篮球" /><font>篮球</font>
+			<input type="checkbox" name="hobby" id="" value="足球" /><font>足球</font>
+			<input type="checkbox" name="hobby" id="" value="游泳" /><font>游泳</font>
+			<input type="checkbox" name="hobby" id="" value="羽毛球" /><font>羽毛球</font>
+			<input type="checkbox" name="hobby" id="" value="电子游戏" /><font>电子游戏</font>
+			<input type="checkbox" name="hobby" id="" value="户外" /><font>户外</font>
+			<input type="checkbox" name="hobby" id="" value="电影" /><font>电影</font>
+			<input type="checkbox" name="hobby" id="" value="旅游" /><font>旅游</font>
+			<br />
+			
+			<!--e.button:普通按钮				
+				value属性：决定按钮上显示的文字
+			-->
+			<input type="button" name="" id="" value="登录" />		
+			<br />
+			
+			<!--f.submit：提交按钮
+				点击提交按钮会自动提交当前form中所有设置了name属性的相关标签的值
+				以name=value的形式提交
+				
+			-->
+			<input type="submit" name="" id="" value="提交" />
+			<br />
+			<!--g.reset -- 重置标签
+				将当前form中所有标签色泽为初始状态
+				
+			-->
+			<input type="reset" name="" id="" value="重置" />
+			<br />
+			<!--按钮标签：button
+				
+			-->
+			<button>登录</button>
+			<button>
+				<img src="../html超文本标记语言/img/1543838567(1).jpg"/>
+				<p>登录</p>
+			</button>
+			
+			
+			
+			
+			<br />
+			<input type="submit" name="" id="" value="提交" />
+		</form>
+	</body>
+</html>

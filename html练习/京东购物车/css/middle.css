@@ -1,0 +1,69 @@
+/*=========================中间==============================*/
+#middle td{
+	font-size: 14px;
+	/*background-color: cyan;*/
+    border-bottom: 2px solid darkgray;
+}
+#middle #header{
+    border-bottom: 0;
+}
+#goods{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#goods #header{
+	background-color: #D3D3D3;
+	height: 40px;
+	border: 0;
+}
+#goods .td1{
+	width: 50px;
+}
+
+#goods .td2{
+	width: 250px;
+}
+#goods .td3{
+	width: 100px;
+}
+#goods td{
+	text-align: center;
+}
+.inputnum input{
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid darkgray;
+}
+.inputnum button{
+	width: 20px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid darkgray;
+}
+.imggoods{
+	padding-top: 40px;
+	width: 400px;
+	padding-bottom: 40px;
+}
+.imggoods font{	
+	float: left;
+	height: 100px;
+	width: 300px;	
+}
+.imggoods img{
+	height: 140px;
+	width: 100px;
+	float: left;
+}
+.chInput input{
+	position: absolute;
+	left: 24px;
+	line-height: 50%;
+}
+#goods #total{
+	font-size: 14px;
+	font-weight: 900;
+}
+

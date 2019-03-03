@@ -1,0 +1,158 @@
+
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击小图换大图</title>
+		<style type="text/css">
+			*{
+				position: relative;
+				border: 0;
+				margin: 0;
+			}
+			#top{
+				margin-left: 100px;
+				margin-top: 100px;
+				margin-bottom: 10px;
+			}
+			#top img{
+				width: 100px;
+				height: 100px;
+				margin-left: 20px;
+			}
+			#content{
+				width: 480px;
+				height: 480px;
+				background-color: #00FFFF;
+				margin-left: 120px;
+			}
+			#content #imgg{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='top'>
+			<img src="img/img/picture-1.jpg" onclick="addFruit()" />
+			<img src="img/img/slide-3.jpg" alt="" />
+			<img src="img/img/slide-2.jpg" alt="" />
+			<img src="img/img/slide-1.jpg" alt="" />
+		</div>
+		<div id='content'>
+			<img id='imgg' src="img/img/picture-1.jpg"/>
+			<script type="text/javascript">
+				var imgNode = document.getElementById('imgg')
+				var topNone = document.getElementById('top')
+				for(x in topNone.children){
+					imgChild = topNone.children[x]
+					imgChild.onclick = function(){
+						imgNode.src=this.src
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击小图换大图</title>
+		<style type="text/css">
+			*{
+				border: 0;
+				margin: 0;
+				position: relative;
+			}
+			#bigimg{
+				width: 500px;
+				height: 300px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id='samllbox'>
+			
+		</div>
+		<div id='bigbox'>
+			<img id='bigimg'/>
+		</div>
+		
+		<script type="text/javascript">
+			//  获取节点
+			var smallBoxNode = document.getElementById('samllbox')
+			var bigBoxNode = document.getElementById('bigbox')
+			var bigImg = document.getElementById('bigimg')
+			var imgArray = [
+			{
+				name:'图一',
+				small_url:'img/img/thumb-1.jpg',
+				big_url:'img/img/picture-1.jpg'
+			},
+			{
+				name:'图二',
+				small_url:'img/img/thumb-2.jpg',
+				big_url:'img/img/picture-2.jpg'
+			},
+			{
+				name:'图三',
+				small_url:'img/img/thumb-3.jpg',
+				big_url:'img/img/picture-3.jpg'
+			}
+			]
+			//声明变量保存小图片当前下划线对象
+			var currentSmallNode = null
+			// 将数据展示在浏览器相应的位置
+			
+			for(var x in imgArray){
+				var imgobj = imgArray[x]
+				var smallImagNode = document.createElement('img')
+				if(x==0){
+					smallImagNode.style.borderBottom = '2px solid black'
+					currentSmallNode = smallImagNode
+					currentSmallNode.idenx = 0
+				}
+				
+				smallImagNode.src = imgobj.small_url
+				smallImagNode.info = imgobj
+				smallBoxNode.appendChild(smallImagNode)
+				//绑定事件
+				smallImagNode.onmouseover=function(){
+					bigImg.src = this.info.big_url
+					// 让默认的当前对象的下划线变为none,鼠标箭头覆盖的对象的下划线设置出来，并且把鼠标覆盖的对象变成当前对象
+					currentSmallNode.style.border = 'none'
+					this.style.borderBottom = '2px solid black'
+					currentSmallNode= this
+				}
+			}
+			//大图默认显示
+			bigImg.src = imgArray[0].big_url
+			//定时事件
+//			var index=0
+			var inter1 = window.setInterval(function(){
+				var index=currentSmallNode.idenx
+				var smallimg = smallBoxNode.children
+				index++
+				if(index==smallimg.length){
+					index=0
+				}
+				bigImg.src = smallimg[index].info.big_url
+				currentSmallNode.style.border = 'none'
+				smallimg[index].style.borderBottom = '2px solid black'
+				currentSmallNode=smallimg[index]
+				currentSmallNode.idenx = index
+				
+			},2000)
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

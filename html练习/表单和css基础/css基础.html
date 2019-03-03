@@ -1,0 +1,63 @@
+<!--1.什么是css
+      css是web标准的表现样式，负责网页中内容的布局和样式
+	目前使用的是css3
+	css又叫样式表
+	2.css语法
+	a.基本结构：选择器{属性名1：属性值1；属性名2：属性值2；...}
+	   常用属性：color--文字颜色
+	           font-size -- 字体大小
+	           background-color -- 背景颜色
+	           width -- 宽度
+	           height -- 高度
+	b.说明
+	选择器：通过选择器决定样式是给那个标签写的  （在内联样式表中没有这个结构）
+	属性：属性名必须是css支持的200多个属性中的一个；属性名和属性值之间用冒号隔开，
+	               多个属性之间用分号隔开（没有分号，后边所有属性无效）
+	3.css代码写在哪
+	  a.内联样式表：只针对单个标签
+	      将css代码写在标签的style属性当中,style属性值为css代码
+	      css中的颜色值：a.英语单词
+	                    b.rgb的十六进制值，例如：#ff0000,#00ff00
+	                    c.直接使用rgb值: rgb(r,g,b)或者rgba(r,g,b,Alpha) Alpha：0到1（0完全透明，1完全不透明）
+	      css中的大小必须给单位： px：像素    em：空格   %:百分比
+	  b.内部样式表：只针对单个文件
+	    将样式表作为head标签中的style标签的内容(也可以放在body里面)
+	    可以写在html文件中的任何位置
+	    
+	  c.外部样式表：可以针对当前项目中的所有html文件
+	    将样式表写在一个css文件中，再通过link导入
+	    可以针对html中所有标签
+	    
+	  4.内联优先级最高，内部和外部样式表，哪一个写在后面，哪一个的优先级就高（优先级高的体现到网页上）
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css基础</title>
+		<!--内部样式表
+			sytle标签中的内容必须是css代码
+			选择器选择当前html中所有的这个类型的标签
+		-->
+		<style type="text/css">
+			a{
+				color: rgb(34,46,5);
+				}
+		</style>
+		<!--外部样式表
+			a.link标签--导入外部文件
+			rel属性--确定导入文件的功能；stylesheet（样式表）；icon（网页图标）
+			b.type属性--确定文件类型：文件类型/文件后缀：text/css（文本文件/后缀名css）
+		-->
+		<link rel="stylesheet" type="text/css" href="css/css基础.css"/>
+		<link rel="icon" type="img/jpg" href="img/QQ图片20181204153348.jpg"/>
+	</head>
+	<body>
+		<p style="color: crimson;">我是内联样式表</p>
+		<p style="color: rgba(0,255,0,0.5);font-size: 80px;">我是内联样式表</p>
+		<a href="http://www.baidu.com">百度一下你就知道</a>
+		<h>我是老板</h>
+	</body>
+</html>

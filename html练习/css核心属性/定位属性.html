@@ -1,0 +1,33 @@
+<!--1.定位属性：
+	left --标签左边到指定位置间距（左间距）
+	right --标签的右边到指定位置间距（右间距）
+	top --标签的上边到指定位置间距（上间距）
+	bottom --标签的下边到指定位置间距（下间距）
+	2.position属性 -- 设置标签定位时的参考对象（到这个位置的距离）
+	没有设置position属性的标签，默认的批示通属性是initial/static（默认值） -- 不对任何位置定位
+		absolute（绝对定位） - 相对于第一个非initial/static得父标签的定位
+		relative（相对定位） - 相对当前标签在标准流中位置进行定位（很少用，）
+		          一般把一个标签的position设置为relative是为了让当前标签的子标签可以相对于自己定位
+		fixed - 相对于浏览器进行定位
+		sticky - 当网页中的内容超过一屏（需要滚动），相对浏览器定位；
+		                 当网页中内容没有超过一屏，相对于标准流定位
+	定位会让标签脱标（一行显示多个，设置宽高有效，默认宽高大小是内容宽高大小）
+	
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div style="background-color: #FF0000;width: 100px;height: 100px;">
+			
+		</div>
+	</body>
+</html>

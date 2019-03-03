@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>超链接</title>
+	</head>
+	<body>
+		<!--超链接标签（a）
+			点击可以跳转到其他页面的内容就是超链接
+			1.内容
+			超链接在网页中课件并且可电机的部分；可以是图片也可以是文字
+			a.文字超链接：
+		-->
+		<a href="">百度一下</a>
+		<!--图片超链接-->
+		<a href="">
+			<img src="https://www.baidu.com/img/bd_logo1.png?qua=high" title="地球最帅" />
+		</a>
+		<!--2.href属性 -- 超链接点击后跳转的目标地址
+			a.设置另外一个网页的地址 --跳到指定网页（当前页面换成指定的页面）
+			b.设置另外一个文件地址  --  跳到本地网页中
+			c.设置当前页面标签的对应的选择器--让当前网页滚动到指定位置
+			    要跳转的位置1，此处添加属性   id="属性值" ，后面点击跳转的图片或者文字位置2，位置2里面 href="属性值"，
+			    这样在网页中点击该图片或者文字就能跳转到位置1
+			d.设置为空 -- 刷新页面
+		-->
+		<a href="https://www.baidu.com">百度一一下</a>
+		<a href="img/timg.jpg">本地图片</a>
+		<br />
+		<a href="">刷新</a> 
+		<a href="#">刷新</a>
+		<!--3.target属性
+			_self（默认值） -- 当前页面中显示新的页面
+			blank -- 打开一个新的网页页面
+		-->
+		<a href="https://www.baidu.com" target="blank">百度两下</a>
+	</body>
+</html>

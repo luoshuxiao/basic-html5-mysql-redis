@@ -1,0 +1,198 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				position: relative;
+				border: 0;
+				margin: 0;
+			}
+			#input{
+				top: 200px;
+				height: 40px;
+				text-align: center;
+			}
+			#inp{
+				display: inline-block;
+				width: 220px;
+				height: 30px;
+				text-align: center;
+				outline: 0;
+				border-bottom: 2px solid #D3D3D3;
+				color: brown;
+				font-size: 25px;
+			}
+			#input button{
+				margin-left: 10px;
+				width: 80px;
+				height: 30px;
+				background-color: red;
+			}
+			#font1{
+				display: inline-block;
+				left: -90px;
+				font-size: 25px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id='input'>
+			<script type="text/javascript">
+				function delNode(){
+					var fontNode = document.getElementById('font1')
+					fontNode.innerHTML=''
+					return
+				}
+				function addNode(){
+					var inpNode = document.getElementById('inp')
+				    var fontNode1 = document.getElementById('font1')
+			        var pNode = document.createElement('p')
+			        var judge = /'川'[A-Z]\d{5}/
+
+			        var  b = judge.test(inpNode.value)
+			        if(b){
+			        	
+			        	
+			        	pNode.innerText=inpNode.value
+                        fontNode1.appendChild(pNode)
+                        inpNode.value=''
+			        }else{
+			        	pNode.innerText=inpNode.value+':该车牌输入有误'
+			        	inpNode.value=''
+			        }
+			        return
+			        
+			        
+				}
+			</script>
+			<input type="" name="" id="inp" value="" placeholder="四川车牌号"/>
+			<button id='search' onclick="addNode()">查询</button>
+			<button id='clear' onclick="delNode()">清除</button>
+			<br />
+			<div id='font1'>
+			</div>
+		</div>
+		<div>
+			
+		</div>
+
+	</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				border: 0;
+				margin: 0;
+				position: relative;
+			}
+			
+			#box1{
+				border-bottom: 1px solid darkgray;
+				margin-top: 200px;
+				width: 100%;
+				height: 50%;
+				text-align: center;
+			
+			}
+			#box1 input{
+				font-size: 30px;
+				text-align: center;
+				outline: 0;
+				margin-bottom: 10px;
+				border-bottom: 1px solid darkgray;
+			}
+			button{
+				width: 80px;
+				height: 40px;
+				color: white;
+				background-color: red;
+			}
+			#box2{
+				text-align: center;
+				font-size: 25px;
+				margin-right: 160px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box1'>
+			<input type="text" name="" id="" value="" placeholder="请输入车牌号"/>
+			<button id='btn1'>查找</button>
+			<button id='btn2'>清除</button>
+		</div>
+		<div id='box2'></div>
+		
+		
+		<script type="text/javascript">
+			var carNumNode = document.getElementsByTagName('input')[0]
+			
+			var searchNode = document.getElementById('btn1')
+			var clearNode = document.getElementById('btn2')
+			var resultBoxNode = document.getElementById('box2')
+			
+			// =====车牌号正则表达式====
+			restr = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/
+			// ======时否限行======
+			function is_move(carN){
+				//a.获取最后一个数字
+				var isN=false
+				for(var x=carN.length-1;x>=0;x--){
+					var number1=carN[x]
+					if(number1>='0'&&number1<='9'){
+						isN = true
+						break
+					}
+				}
+				if(!isN){
+					return carN+'不是有效车牌号'
+				}
+				//b.判断数字是否限行
+				var now = new Date()
+//				var year = now.getFullYear()  //  获取年份
+//				var month = now.getMonth()  //  获取 月份
+//				var day = now.getDate()   //  获取 今天
+				var week = now.getDay()   // 获取今天星期几
+				if(week>5){
+					return carN+'今日不限行'
+				}else{
+					if(week==number1||(week+5)%10 == number1){
+						return carN+'今日限行'
+					}else{
+						return carN+'今日不限行'
+					}
+				}
+				
+			}
+			
+			//========查询========
+			searchNode.onclick =function(){
+				var carNum=carNumNode.value
+				// 获取输入框中的值后清空输入框
+				carNumNode.value=''
+				//创建新的节点
+				
+				var newNode = document.createElement('p')
+				if(restr.test(carNum)){
+					var massage = is_move(carNum)
+					newNode.innerText = massage
+				}else{
+					newNode.innerText = carNum+'不是有效车牌'
+				}
+				resultBoxNode.appendChild(newNode)
+			}
+			//=========清除========
+			clearNode.onclick=function(){
+				resultBoxNode.innerHTML=''
+			}
+		</script>
+		
+	</body>
+</html>

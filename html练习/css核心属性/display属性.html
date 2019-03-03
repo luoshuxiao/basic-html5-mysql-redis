@@ -1,0 +1,33 @@
+<!--
+	dispaly属性值代表标签的类型：
+	   1.block -- 块标签
+	   2.inline -- 行内
+	   3.inline-block -- 行内块
+	   默认情况下我们标签没有行内块的，可以通过修改dsiplay属性值来修改标签类型
+	  使用行内块的时候，有一个不可避免的bug，行内款与其他标签之间的间隙无法去除，不建议使用行内块 
+	  
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				background-color: blue;
+				display: block;
+				width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--块标签变成行内标签-->
+		<p style="background-color: #008000;display: inline;"></p>
+		<p style="background-color: red;display: inline;"></p>
+		<!--块标签变成行内块标签-->
+		<p style="background-color: grey;display: inline-block;width: 100px;height: 300px;">我是段落3</p>
+		<!--行内标签变成块标签-->
+		<a href="" >百度</a>
+	</body>
+</html>

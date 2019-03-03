@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+			position: relative;
+			padding: 0;
+			margin: 0;
+		   }
+		   #top{
+		   	margin-left: 20px;
+		   	margin-top: 20px;
+		   }
+		   #top div{
+		   	width: 200px;
+		   	height: 50px;
+		   	color: #00FFFF;
+		   	font-size: 3px;
+		   	text-align: center;
+		   	line-height: 50px;
+		   	margin: 2px;
+		   }
+		    #top div font{
+		    	position: absolute;
+		    	right: 3px;
+		    	cursor: pointer;
+		    }
+		    #bottom{
+		    	margin-left: 60px;
+		    }
+		    #bottom #text{
+		    	display: inline-block;
+		    	width: 150px;
+		    	height: 40px;
+		    	border: 0;
+		    	outline: 0;
+		    	text-align: center;
+		    	border-bottom: 2px solid lightgrey;
+		    }
+		    #bottom #button{
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				border: none;
+				outline: none;
+				background-color: coral;
+				color: white;
+			}
+		</style>
+		
+	
+		
+		
+	</head>
+	<body>
+		<div id='top'>
+		</div>
+		<script type="text/javascript">
+			var fruitArray = ['香蕉','苹果','草莓','火龙果']
+			function delFruit(){
+		        this.parentElement.remove()
+	       }
+			for(x in fruitArray){
+				fruitName = fruitArray[x]
+				var fruitNode = document.createElement('div')
+				fruitNode.innerHTML = fruitName
+				var fontNode = document.createElement('font')
+				fontNode.innerText='X'
+				fontNode.onclick=delFruit
+				fruitNode.appendChild(fontNode)
+				fruitNode.style.backgroundColor='green'
+				var topNone = document.getElementById('top')
+				topNone.appendChild(fruitNode)
+			}	
+		</script>
+		<div id='bottom'>
+			<input type="text" name="" id="text" value="" />
+			<input type="button" name="" id="button" value="确定" onclick="addFruit()" />
+		</div>
+		<script type="text/javascript">
+			function randomColor(){
+				var num1=parseInt(Math.random()*255)
+				var num2=parseInt(Math.random()*255)
+				var num3=parseInt(Math.random()*255)
+				return 'rgb('+num1+','+num2+','+num3+')'
+			}
+			function addFruit(){
+				var inputNode = document.getElementById('text')
+				var addName = inputNode.value
+				if(addName.length==0){
+					alert('输入的内容为空')
+					return
+				}
+				inputNode.value=''
+				var fruitNone = document.createElement('div')
+				fruitNode.innerHTML=addName
+				var fontName = document.createElement('font')
+				fontName.innerText='X'
+				fontName.onclick=delFruit
+				fruitNode.appendChild(fontName)
+				fruitNode.style.backgroundColor=randomColor()
+				var topName = document.getElementById('top')
+				topName.insertBefore(fruitNode,topName.firstChild)
+			}
+		</script>
+	</body>
+</html>
+
+

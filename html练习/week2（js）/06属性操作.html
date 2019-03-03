@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	//1.属性的点语法操作
+	//节点.属性 -- 获取属性值； 节点.属性 = 新值  --  修改属性的值
+	//2.通过相应方法对属性进行操作
+	//a.获取属性 --  节点.getArrtribute(属性名)
+	var imgNode = document.getElementsByTagName('img')
+	var srcAttr = imgNode[0].getAttribute(name)
+	console.log(srcAttr)
+	//b.属性赋值 --  节点.setAttribute(属性名，值)
+	imgNode.setAttribute('title','帅哥')
+	//c.删除属性  --  节点.removeAttribute()
+	var buttonNode = document.getElementsByTagName('button')
+	buttonNode.removeAttribute('disabled')
+	
+	
+	
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/img/slide-2.jpg" alt="" />
+		<button disabled="disabled">点我</button>
+	</body>
+</html>

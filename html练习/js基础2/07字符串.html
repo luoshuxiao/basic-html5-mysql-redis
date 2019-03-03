@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	//1.字符串:字面量
+	/*a.使用双引号或者单银行括起来的字符集
+	 *b.除了普通字符以外还可以是转义字符：\n，\t,\\,\',\"
+	 *c.\U4e00  、\U加4位的十六进制对应的Unicode编码值 
+	 *2.获取字符
+	 * 字符串[下标] -- 获取单个字符
+	 * 下标范围：0到长度减1；下标如果越界，取到的值是undefined
+	 * js中没有切片语法
+	 * 
+	 * */
+	str1 = 'hello js'
+	console.log(str1[0])
+	
+	//3.相关运算：+
+	//   支持字符串和其他任何数据相加，是将其他数据全部转换成字符串，然后再拼接
+	str2= 'abc'*2
+	console.log(str2)  //  结果：NaN -- js中一个特殊的值，类似undefined、null，用来表示一个不存在的数据
+	str3 = 'abc'+[1,'af',[2,'23']]
+	console.log(str3)  // 结果：abc1,af,2,23   
+	//数据类型的转换：  数据类型（）
+	num_str =String([1,2,'abc'])
+	console.log(num_str,typeof(num_str))  // 结果：1,2,abc string
+	//4.字符串长度
+	console.log('sdaegggg'.length)
+	
+	str3 = 'abc'     // String类型
+	str4 = new String('abc') //object类型
+	
+	String.prototype = 'longge'  // 给字符串添加longge属性
+	'longlonglong'.longge= '老板'
+	
+	//5.字符串相关方法
+	    http://www.runoob.com/js/js-strings.html
+	//6.js中的数组：a.怎么获取数组中的元素  b.数组对应的方法   c.元素可以是任何类型  
+	arr = [1,'adc']
+	console.log(arr)
+	nums = [12,34,567,2,24,44]
+	numss=nums.sort(function(a,b){return a-b})  //从小到大排序  把a-b换成b-a是从大到小
+	console.log(numss)
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

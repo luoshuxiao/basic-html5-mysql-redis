@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉菜单</title>
+	</head>
+	<body>
+		<!--1.下拉菜单：select--option
+			a.select标签：代表整个下拉菜单
+			name属性：区分和提交
+			b.option标签：下拉菜单中的选项
+			c.optgroup标签：将下拉菜单中的项目进行分组
+			
+		-->
+		<form action="" method="post">
+			<select name="学科">
+				<optgroup label="理科"></optgroup>
+				<option value="">英语</option>
+				<option value="">数学</option>
+				<option value="">语文</option>
+				<option value="">物理</option>
+				<optgroup label="文科"></optgroup>
+				<option value="">化学</option>
+				<option value="">生物</option>
+				<option value="">政治</option>
+			</select>
+			<select name="四川">
+				<option value="">成都</option>
+				<option value="">资阳</option>
+				<option value="">德阳</option>
+				<option value="">阿坝</option>
+				<option value="">绵阳</option>
+				<option value="">达州</option>
+			</select>
+			<!--2.多行文本输入框（textarea）
+				可以输入多行内容，内容超出范围可以上下滚动
+				name属性：提交和区分
+				rows：一次性可以显示的行数
+				cols：一行可以显示的文字
+				placehoder:没输入时提示语言
+				内容相当于value
+			-->
+			<textarea name="" rows="2" cols="10" placeholder="是猪就输入">默认值</textarea>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				position: absolute;
+				top: 100px;
+				left: 400px;
+				width: 50%;
+				height: 400px;
+				background-color: darkgoldenrod;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+			#div11{
+				position: absolute;
+				bottom: 10px;
+				width: 25%;
+				left: 37.5%;
+				height: 30px;
+/*				background-color: darkgreen;*/
+			}
+			#id1{
+				position: absolute;
+				left: 0;
+				width: 30px;
+				height: 100%;
+				background-color: cornflowerblue;
+				border-radius: 15px;
+			}
+			#id2{
+				position: absolute;
+				margin-left: 54px;
+				width: 30px;
+				height: 100%;
+				background-color: cornflowerblue;
+				border-radius: 15px;
+			}
+			#id3{
+				position: absolute;
+				margin-left: 108px;
+				width: 30px;
+				height: 100%;
+				background-color: cornflowerblue;
+				border-radius: 15px;
+			}
+			#id4{
+				position: absolute;
+				right: 0;
+				width: 30px;
+				height: 100%;
+				background-color: cornflowerblue;
+				border-radius: 15px;
+			}
+
+			
+		</style>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				
+			imgArray=['img/img/picture-1.jpg','img/img/slide-1.jpg','img/img/slide-2.jpg','img/img/slide-3.jpg']
+			var imgNode=document.getElementsByTagName('img')[0]
+			var i=0
+			var changeNode= window.setInterval(function(){
+				imgNode.src=imgArray[i]
+				var divNode =document.getElementById('id'+String(i+1))
+				divNode.style.backgroundColor = 'darkgray'
+
+				if(i==0){
+					var divNode =document.getElementById('id4')
+				    divNode.style.backgroundColor = 'cornflowerblue'
+				}
+				else if((i==1)||(i==2)||(i=3)){
+					var divNode1 =document.getElementById('id'+String(i))
+				    divNode1.style.backgroundColor = 'cornflowerblue'
+				}
+				i++
+				if(i==4){i=0}
+				
+			var id1Node = document.getElementById('id1')
+			id1Node.onmouseover = function(){
+				imgNode.src=imgArray[0]
+				this.style.backgroundColor='darkgray'
+//				window.clearInterval(changeNode)
+				divNode.style.backgroundColor = 'cornflowerblue'
+			}
+			id1Node.onmouseout = function(){
+				this.style.backgroundColor='cornflowerblue'
+			}
+
+				
+			var id2Node = document.getElementById('id2')
+			id2Node.onmouseover = function(){
+				imgNode.src=imgArray[1]
+				this.style.backgroundColor='darkgray'
+//				window.clearInterval(changeNode)
+				divNode.style.backgroundColor = 'cornflowerblue'
+			}
+			id2Node.onmouseout = function(){
+				this.style.backgroundColor='cornflowerblue'
+			}	
+				
+				
+			var id3Node = document.getElementById('id3')
+			id3Node.onmouseover = function(){
+				imgNode.src=imgArray[2]
+				this.style.backgroundColor='darkgray'
+//				window.clearInterval(changeNode)
+				divNode.style.backgroundColor = 'cornflowerblue'
+			}
+			id3Node.onmouseout = function(){
+				this.style.backgroundColor='cornflowerblue'
+			}	
+				
+				
+			var id4Node = document.getElementById('id4')
+			id4Node.onmouseover = function(){
+				imgNode.src=imgArray[3]
+				this.style.backgroundColor='darkgray'
+//				window.clearInterval(changeNode)
+				divNode.style.backgroundColor = 'cornflowerblue'
+			}
+			id4Node.onmouseout = function(){
+				this.style.backgroundColor='cornflowerblue'
+			}	
+
+			},2000)
+			
+
+			}
+
+		</script>
+		
+	</head>
+	<body>
+		<div id='div'>
+			<img src="img/img/picture-1.jpg" alt="" />
+			<div id='div11'>
+				<div id='id1'></div>
+				<div id='id2'></div>
+				<div id='id3'></div>
+				<div id='id4'></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="button1" onclick="">弹窗弹框</button>
+		<button id="button2">改变颜色</button>
+		<button id='button3'>改变样式</button>
+		<div id='div' style="width: 300px;height: 300px;background-color: #00FFFF;"></div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	//js是事件驱动语言
+	/*1.事件三要素：事件源、事件、事件驱动程序
+	 * 点击按钮，弹出弹框窗-- 事件源：按钮，事件：点击，事件驱动程序：弹出弹窗
+	 * 
+	 * 2.绑定事件：
+	 * 第一步：获取事件源
+	 * 第二步：绑定事件1
+	 * 第三步：写驱动程序
+	 * 
+	 * a.在标签内部给事件源的事件属性赋值：如果被绑定的驱动程序是函数，函数中的this关键字是window
+	 * b.通过节点绑定事件：标签节点.事件属性 = 函数  (函数中的this是事件源)
+	 */
+	var butNode = document.getElementById('button2')
+	//    函数直接写成匿名函数（也可以先声明函数，在调用函数名赋值）
+	butNode.onclick=function(){
+		butNode.style.backgroundColor = 'red'
+	}
+	// 通过节点绑定事件 :可以给同一个节点绑定多个事件驱动程序（以前的事件驱动程序不会被覆盖）
+	var butNode1= document.getElementById('button3')
+	butNode1.addEventListener('click',function(){
+		this.style.color = 'yellow'
+	})
+	//3.获取事件对象：当获取事件驱动程序是函数时，函数中可以设置一个参数，来获取当前事件的事件对象
+	var divNode = document.getElementById('div')
+	divNode.onclick=function(event){    // event就是事件对象
+		console.log(event.clientX,event.clientY)  //  clientX和clientY是鼠标点击位置相对于内容的坐标
+		console.log(event.offsetX,event.offsetY)
+		if(event.offsetX*2<300){
+			this.style.backgroundColor='red'
+		}else{
+			this.style.backgroundColor='black'
+		}
+	}
+	
+</script>

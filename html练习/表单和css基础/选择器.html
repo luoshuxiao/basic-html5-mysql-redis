@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择器</title>
+		<!--css提供的选择器写法（大概十几种），常见写法：
+			1.标签选择器（元素选择器）：直接将标签名作为选择器，选中当前html中所有指定的标签
+			                     例如：a{} -- 选中当前html中所有的a标签
+			                 div{}-- 选中当前html中所有的div标签
+			2.id选择器：将标签的id属性值前面加#作为选择器，选择所有id是指定值得标签
+			            例如：#text{} --  选中当前html中id属性值是text的所有标签
+			            
+			3.class选择器：将标签的class属性值前面加.作为选择器，选中所有class是指定标签
+			       例如：.test{} -- 选中当前html中所有class属性值为test的标签
+			4.群组选择器：将多个选择器用逗号隔开作为一个选择器，同时选中每个单独的选择器选中的标签
+			         例如：p,a,.test,#text{} -- 选中所有的p标签，a标签，id值为test的标签，class值为text的标签选中
+			5.后代选择器：将多个选择器用空格隔开作为一个选择器，从前往后一层一层找找到最后一个选择器对应的标签
+			            例如：  div .test #text{} --  选中div标签中class值为test标签中id值为text的标签
+			              div div p{} --  选中div中div中的p标签
+			6.通配符：将*作为选择器，选中当前页面中所有的标签
+			          例如： *{} 
+		-->        
+		<style type="text/css">
+			/*标签选择器*/
+			div{
+				background-color: black;
+			}
+			/*id选择器*/
+			#text{
+				background-color: green;
+			}
+			/*class选择器*/
+			.test{
+				background-color: white;
+			}
+			/*群组标签*/
+			
+			div,p,#text{
+				background-color: green;
+			}
+			/*通配符*/
+			*{
+				text-decoration: underline;
+				text-decoration: line-through;
+				text-decoration: overline;
+				
+			}
+		</style>
+		<p id="text">我是段落</p>
+		<p class="test">我是猪</p>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <script type="text/javascript" src='js/jquery.min.js'></script>			
+		<script type="text/javascript">
+			//1.普通属性的获取和修改：除了内容部分（innerText，innerHTML,value）
+        	//标签.attr（属性名）  --  获取指定的属性值
+        	//标签.attr(属性名，值) --  修改、添加属性
+        	$(function(){
+        	var srcNode=$('img').attr('src')  //  取第一个img的src属性
+        		console.log(srcNode)
+        	$('img').attr('title','图片一')  //  给所有img标签的title属性修改（添加）：图片一
+        	
+        	// 2.标签内容属性：
+        	//  $('p').html() --返回值是string
+        	//  $('input').val() --返回值是string
+        	//  $('p').text() --返回值是string
+        	console.log($('p').html(),typeof($('p').html()))   //   获取p标签内的所有内容，包括标签
+        	console.log('===========')
+            console.log($('p').text())   //   获取文本内容
+        	console.log($('input').val())  //  获取单标签中的value值
+        	
+        	//3.class属性：html中一个标签的class值可以是多个，用空格隔开
+        	//  标签.addClass(class值) -- 给标签添加class值
+        	//  标签.removeClass（class值） -- 给标签去除class值
+        	$('#div1').addClass('w')  //  给id为div1的标签添加class值 w 样式
+        	$('div').removeClass('a') // 给所有div标签删除class值为a的属性
+
+        	//4.样式属性 
+        	// a.标签.css（样式属性名） -- 获取样式属性值
+        	  console.log($('p').css('height'))
+        	// b.修改、添加
+        	//标签.css(样式属性名，值) -- 修改或者添加属性值
+        	$('p').css('background-color','red')
+        	// 同时修改或者添加多个属性
+        	$('p').css({
+        		'color':'yellow',
+        		'font-size':'50px'
+        	})
+        	
+        	//5.事件
+        	//标签.on(事件名，回调函数) -- 给标签绑定指定的事件
+        	$('button:first').on('mouseover',function(){
+        		// this是js对象，可以直接写js代码，也可以转换为jQuery对象写jQuery代码：$(js对象)
+        		console.log(this)
+        		$(this).css('background-color','goldenrod')
+        	})
+        	//父标签.on(事件,选择器，回调函数) -- 父标签添加事件，传递给选择器（子标签）
+        	// 父标签没有事件驱动程序，子标签有事件驱动程序
+        	$('#v01').on('click','.v011 .v0111',function(){
+					console.log(this)
+				})
+        	
+        	
+        	
+        	
+        	})
+		</script>
+		
+		<style type="text/css">
+			#v01,#v02{
+				width: 800px;
+				height: 200px;
+				background-color: #000000;
+				
+			}
+			#v02{
+				background-color: #ADFF2F;
+			}
+			
+			.v011{
+				width: 100px;
+				height: 100px;
+				margin-top: 50px;
+				display: inline-block;
+				background-color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='v01'>
+			<div class='v011'>
+				<div class='v0111' style="width: 50px;height: 50px;background-color: green;"></div>
+			</div>
+			<div class='v011'></div>
+			<div class='v011'></div>
+			<div class='v011'></div>
+		</div>
+		<div id='v02'></div>
+		
+		<script type="text/javascript">
+			$(function(){
+				$('#v01').on('click','.v0111',function(){
+					console.log(this)
+				})
+				
+				
+			})
+		</script>
+		
+		
+		
+		
+		<button>修改</button>
+		<div id='div1' class="a b">div1</div>
+		<div id='div2' class="a d">div1</div>
+		<div id='div3' class="d b">div1</div>
+		
+		
+		<p>我是段落<a href="">hahahahahahahahaha</a></p>
+		<a href="">我是超链接</a>
+		<img src="img/img/a1.jpg" alt="" />
+		<input value="value"></input>
+		<img src="img/img/slide-1.jpg" alt="" />
+		<img src="img/img/picture-2.jpg" alt="" />
+	</body>
+</html>

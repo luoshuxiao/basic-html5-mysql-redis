@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				border: 0;
+				margin: 0;
+				position: relative;
+				outline: 0;
+			}
+			.fruit{
+				width: 160px;
+				height: 40px;
+				border: 1px solid black;
+				background-color: #D3D3D3;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			font{
+				position: absolute;
+				right: 10px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id='top'></div>
+		<script type="text/javascript">
+			$(function(){
+				var fruitArray = ['苹果','香蕉','火龙果','荔枝']
+				//  遍历数组，取到名字，创建并添加水果标签到父标签
+				for(var x in fruitArray){
+					var fruitname = fruitArray[x]
+					$('#top').append($('<div class="fruit">'+fruitname+'</div>'))
+				}
+				// 给水果标签添加  X
+				$('.fruit').append($('<font>'+"X"+'</font>'))
+				// 点击添加标签时，添加水果标签和X标签在父标签中
+				$('#add').on('click',function(){
+					// 创建水果标签，并把X作为子标签添加到水果标签
+					if($('input').val() == ''){
+						window.alert('输入为空')
+					}else{
+						var fruitN=$('<div class="fruit"></div>').text($('input').val()).append($('<font>X</font>'))
+						// 将水果标签添加到父标签
+						$('#top').append(fruitN)
+					}
+
+				})
+			    // 点击 X 的时候让他的 父标签 移除
+				$('#top').on('click','font',function(){
+					$(this).parent().remove()
+				})
+			})
+		</script>
+		<div id='div2'>
+			<input style="border-bottom: 2px solid black;text-align: center;" value="" />
+			<button id='add'>添加</button>
+		</div>
+	</body>
+</html>

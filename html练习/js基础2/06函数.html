@@ -1,0 +1,59 @@
+<script type="text/javascript">
+	//1.函数声明：
+	/*
+	 
+	 * function 函数名（参数列表）{
+	 * 	函数体
+	 * }
+	 * 
+	 * js中的函数除了声明的关键字不一样，其他的都一样
+	 * 
+	 * */
+	function sum(num1,num2){
+		return num1+num2
+	}
+	
+    //2.函数调用：
+    //  js中 函数的默认返回值是  undefined
+    sum(10,30)
+    console.log(sum(10,20))
+	
+	//3.匿名函数
+	/*
+	 *函数名 = function(参数列表){函数体} 
+	 * 
+	 * 
+	 * */
+	
+	fun2=function(a,b){
+		return a*b
+	}
+	console.log(fun2(3,4))
+	
+	p = {'name':'男'}
+    console.log(p.name)
+	//4.变量的作用域
+	/*
+	 * a.全局变量：只要声明在函数外面的变量就是全局变量 
+	 *          在函数中以函数名等于值得形式声明的变量也是全局变量
+	 * b.局部变量：声明在函数中，以var关键字声明在函数中的变量才是局部变量
+	 * */
+	
+	function abc(){
+		a = 111    //全局变量
+		var b=345  //局部变量
+	}
+	
+</script>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数</title>
+	</head>
+	<body>
+		这个网页说的是函数，右键点击检查可以查看哦！
+	</body>
+</html>

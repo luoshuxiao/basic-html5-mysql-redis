@@ -1,0 +1,45 @@
+<!--
+	css主要用来对网页布局和样式设置
+	1.标准流：网页中的内容在没有写样式的时候，默认的布局方式，就叫标准流
+	   在标准流中不同类型的标签布局方式不一样：
+	   a.如果是块级标签。一个标签占一行，默认的宽度是父标签的宽度，默认高度是内容的高度，设置宽/高有效
+	   b.如果是行内标签，一行可以显示多个，默认的宽度和高度都是内容的宽度和高度，设置宽/高无效
+	   c.如果是行内块标签，一行可以显示多个，默认宽度和高度都是内容的宽度和高度，设置宽/高有效
+	2.标签的默认分组 
+	块级标签：h1到h6 , p ，table , tr ,ol , ui, dl ,div
+	行内标签：font , td , input ，a , img , select , textarea , span
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h1{
+				background-color: red;
+			}
+			h2{
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>我是标题1</h1>
+		<h2>我是标题2</h2>
+		<p>我是段落1</p>
+		<p>我是段落2</p>
+		<span id="">
+			<a href="http://www.baidu.com">百度一下你就晓得</a>
+			<a href="">百度两下</a>
+			<a href="">百度三下</a>
+		</span>
+		<div id="">
+			<a href="http://www.baidu.com">百度一下你就晓得</a>
+			<a href="">百度两下</a>
+			<a href="">百度三下</a>
+		</div>
+		
+	</body>
+</html>
